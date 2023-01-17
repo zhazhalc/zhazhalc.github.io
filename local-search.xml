@@ -4,32 +4,6 @@
   
   
   <entry>
-    <title>尝试</title>
-    <link href="/2023/01/17/TEST/"/>
-    <url>/2023/01/17/TEST/</url>
-    
-    <content type="html"><![CDATA[<p>芜湖，开始写博客啦，主要是希望能监督自己去学习新东西，感觉写博客是很好的学习方式捏。<br>先记录下这次搭博客吧  </p><h5 id="还算顺利的搭博客初尝试"><a href="#还算顺利的搭博客初尝试" class="headerlink" title="还算顺利的搭博客初尝试"></a>还算顺利的搭博客初尝试</h5><p>选了比较主流的github+hexo，感觉选对教程很重要，花了大概一个小时去看各类教程，对流程和原理大概有一些认识了，就开始搭了，推荐这个<a href="https://oceanwang.top/personal-website-1/">教程</a> ,跟着走基本是没有问题的。<br>也遇到过几个error，但只要会用搜索引擎就可以解决，可惜这次没有记录下来，感觉都是小白（比如我）容易遇到的问题orz，下次一定！</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="/2023/01/17/hello-world/"/>
-    <url>/2023/01/17/hello-world/</url>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>数据结构学习--链表</title>
     <link href="/2023/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/"/>
     <url>/2023/01/02/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0/</url>
@@ -62,6 +36,38 @@
   
   
   <entry>
+    <title>Hello World</title>
+    <link href="/2022/12/27/hello-world/"/>
+    <url>/2022/12/27/hello-world/</url>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>尝试</title>
+    <link href="/2022/12/27/TEST/"/>
+    <url>/2022/12/27/TEST/</url>
+    
+    <content type="html"><![CDATA[<p>芜湖，开始写博客啦，主要是希望能监督自己去学习新东西，感觉写博客是很好的学习方式捏。<br>先记录下这次搭博客吧  </p><h5 id="还算顺利的搭博客初尝试"><a href="#还算顺利的搭博客初尝试" class="headerlink" title="还算顺利的搭博客初尝试"></a>还算顺利的搭博客初尝试</h5><p>选了比较主流的github+hexo，感觉选对教程很重要，花了大概一个小时去看各类教程，对流程和原理大概有一些认识了，就开始搭了，推荐这个<a href="https://oceanwang.top/personal-website-1/">教程</a> ,跟着走基本是没有问题的。<br>也遇到过几个error，但只要会用搜索引擎就可以解决，可惜这次没有记录下来，感觉都是小白（比如我）容易遇到的问题orz，下次一定！</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>日常纪事</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>C语言hb记录</title>
     <link href="/2022/12/26/C%E8%AF%AD%E8%A8%80hb%E8%AE%B0%E5%BD%95/"/>
     <url>/2022/12/26/C%E8%AF%AD%E8%A8%80hb%E8%AE%B0%E5%BD%95/</url>
@@ -73,25 +79,6 @@
     <tags>
       
       <tag>C语言</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>日纪12.25</title>
-    <link href="/2022/12/26/%E6%97%A5%E7%BA%AA12-25/"/>
-    <url>/2022/12/26/%E6%97%A5%E7%BA%AA12-25/</url>
-    
-    <content type="html"><![CDATA[<p>今天玩了鹅鹅杀，很开心wuhuuu，之前一直认为自己最喜欢安静的环境，<br>喜欢独处，现在发现自己并非适应不了热闹的环境，和有趣的人玩还蛮开心（要加强自己睁眼说瞎话的能力，临场发挥性不强orz 但是玩了两个小时头有点痛orz，下次还是得玩的时间短一点，深夜的时间是宝贵的，还是更喜欢一个人呆着，有种安全感。<br>寒假正式开始了（？明天要开始干活了，哦，今天，希望能完成计划的80%，长路漫漫呀，感觉自己需要学好多东西啊，，，脚踏实地，慢慢来吧</p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>日纪</tag>
       
     </tags>
     
