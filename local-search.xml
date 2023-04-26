@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>第十一章 标志寄存器</title>
+    <link href="/2023/04/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%EF%BC%9A%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%20%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8/"/>
+    <url>/2023/04/26/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%EF%BC%9A%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0%20%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A8/</url>
+    
+    <content type="html"><![CDATA[<p>首先，明确<strong>影响标志寄存器变化的操作—数据逻辑运算</strong>，而<code>mov</code>这种是不影响的<br><code>add sub xor or and</code>影响</p><h4 id="标志位总结"><a href="#标志位总结" class="headerlink" title="标志位总结"></a>标志位总结</h4><p><strong>ZF</strong>：零标志位，如果某指令执行后其结果为0，则zf变为1，不为0，则zf变为0<br><strong>PF</strong>： 奇偶标志位，如果<strong>结果所有bit中1的个数</strong>是偶数则为1，奇数为0。<br><strong>SF</strong>： 正负号标志位，结果为负，则sf = 1 结果非负，则sf = 0。（针对有符号数<br><strong>CF</strong>： 进位标志位，在进行<strong>无符号数</strong>运算时，它记录运算结果的最高有效位进位值（是否发生进位，类似正溢出），或者从更高有效位借位值（是否发生借位，类似负溢出）<br><strong>OF</strong>： 溢出标志位，如果结果溢出，of = 1<br><em>关于CF和OF</em><br>溢出标志OF和进位标志CF是两个意义不同的标志。对于无符号数来说,不存在溢出的问题,它的进位就相当于有符号数中的溢出，而对有符号数来说,不存在进位的问题</p><h4 id="利用了标志位的指令"><a href="#利用了标志位的指令" class="headerlink" title="利用了标志位的指令"></a>利用了标志位的指令</h4><p><strong>abc指令</strong>：带进位加法指令，可以利用CF记录进位值。扩大了加法的范围，比如8位的可以扩展成16位<br>add ax,bx 相当于：</p><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs x86asm"><span class="hljs-keyword">add</span> <span class="hljs-built_in">al</span>,<span class="hljs-built_in">bl</span><br><span class="hljs-keyword">adc</span> <span class="hljs-number">ah</span>,<span class="hljs-number">bh</span><br></code></pre></td></tr></table></figure><p><strong>sbb指令</strong>：带借位的减法指令，利用CF记录借位值。作用于adc类似，扩展了减法范围，实现任意大数减法计算。sbb ax, bx = (ax) - (bx) - CF<br><strong>cmp指令</strong>：cmp是比较指令，cmp相当于减法指令，只是不保存结果。 cmp执行后，将对标志位产生影响。接着，其他指令通过标志位判断比较结果。、</p><h4 id="检测比较结果的条件转移指令"><a href="#检测比较结果的条件转移指令" class="headerlink" title="检测比较结果的条件转移指令"></a>检测比较结果的条件转移指令</h4><p>自己看书</p><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs abnf">指令              含义                  检测的相关标志位<br>je             等于则转移               zf <span class="hljs-operator">=</span> <span class="hljs-number">1</span><br>jne            不等于则转移             zf <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>jb             低于则转移               cf <span class="hljs-operator">=</span> <span class="hljs-number">1</span><br>jnb            不低于则转移             cf <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>ja             高于则转移               cf <span class="hljs-operator">=</span> <span class="hljs-number">0</span> 且 zf <span class="hljs-operator">=</span> <span class="hljs-number">0</span><br>jna            不高于则转移             cf <span class="hljs-operator">=</span> <span class="hljs-number">1</span> 或 zf <span class="hljs-operator">=</span> <span class="hljs-number">1</span><br></code></pre></td></tr></table></figure><h4 id="DF标志和串传送指令"><a href="#DF标志和串传送指令" class="headerlink" title="DF标志和串传送指令"></a>DF标志和串传送指令</h4><p>movsb：功能是将<code>ds:si</code>指向的内存单元中的<em>字节</em>送入<code>es:di</code>中，然后根据标志寄存器<code>df</code>位的值，将si和di递增或递减。当然，也可以传送一个字<br>movsw：功能是将<code>ds:si</code>指向的内存字单元中的<em>字</em>送入<code>es:di</code>中，然后根据标志寄存器<code>df</code>位的值，将si和di递增2或递减2.<br><strong>rep movsb</strong>：<code>rep</code>就是<code>repeat</code>，rep 的作用是根据cx的值，重复执行后面的串传送指令，所以这个指令就是重复转移cx个字节</p><p>这个指令的核心就在于<code>df</code> ,那<code>df</code>的值如何设置呢<br>8086CPU提供了下面两条指令对df位进行设置：</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">cld</span>指令: 将标志寄存器的df位 置<span class="hljs-number">0</span> <br><span class="hljs-attribute">sld</span>指令: 将标志寄存器的df位 置<span class="hljs-number">1</span><br></code></pre></td></tr></table></figure><h4 id="pushf和popf"><a href="#pushf和popf" class="headerlink" title="pushf和popf"></a>pushf和popf</h4><p>pushf的功能是将标志寄存器(flag)的值压栈，而popf是从栈中弹出数据，送入标志寄存器中.</p><h4 id="标志寄存器在Debug中的显示"><a href="#标志寄存器在Debug中的显示" class="headerlink" title="标志寄存器在Debug中的显示"></a>标志寄存器在Debug中的显示</h4><p>[<img src="https://s1.ax1x.com/2023/04/26/p9MMuaF.png" alt="p9MMuaF.png"></p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>汇编语言</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>双链表基本操作</title>
     <link href="/2023/03/20/%E5%8F%8C%E9%93%BE%E8%A1%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/"/>
     <url>/2023/03/20/%E5%8F%8C%E9%93%BE%E8%A1%A8%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/</url>
